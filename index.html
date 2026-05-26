@@ -483,7 +483,7 @@
             } else if (q.type === 'listening') {
                 html += `
                     <div class="audio-control">
-                        <button class="btn-audio" onclick="playAudio('${escapeRegExp(q.audioScript)}')">🔊</button>
+                        <button class="btn-audio" onclick="playAudio()">🔊</button>
                         <span style="font-size: 14px; color: #27AE60; font-weight: 600;">Nhấp vào loa để nghe máy đọc (Bật âm lượng máy tính)</span>
                     </div>
                 `;
@@ -545,7 +545,8 @@
         }
 
         // Hàm phát âm chuẩn dùng Web Speech API tích hợp sẵn trên trình duyệt Chrome/Edge
-        function playAudio(text) {
+        function playAudio () {
+            let text = questions[currentQuestion].audioScript;
             // Dừng các giọng nói đang phát dở (nếu có)
             window.speechSynthesis.cancel();
             
