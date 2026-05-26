@@ -427,13 +427,53 @@
                 ],
                 correct: 1,
                 explanation: "Bạn nữ bảo câu lạc bộ mỹ thuật bị hủy (canceled) và bạn ấy sẽ đến thư viện để đọc sách ('going to the library to read instead')."
+            },
+            // Thêm dấu phẩy ở câu số 5 phía trên trước khi dán đoạn này
+            {
+                type: "reading",
+                typeLabel: "Kỹ năng Đọc - Biển báo",
+                stimulus: "PLEASE KEEP OFF THE GRASS.<br>Use the walking paths only. Thank you! - City Park Manager",
+                question: "Where would you most likely see this sign?",
+                options: [
+                    "Inside a school library",
+                    "At a public park",
+                    "In a swimming pool"
+                ],
+                correct: 1,
+                explanation: "Biển báo yêu cầu không giẫm lên cỏ (Keep off the grass) và đi trên đường đi bộ (walking paths). Nó được ký bởi 'City Park Manager' nên chắc chắn nằm ở công viên (public park)."
+            },
+            {
+                type: "reading",
+                typeLabel: "Kỹ năng Đọc - Thư từ (Letter)",
+                stimulus: "Dear Sam,<br>I am having a great time at summer camp! Yesterday, we learned how to make a campfire and cook marshmallows. Tomorrow, we are going kayaking on the lake. I miss you!<br>Best,<br>Alex",
+                question: "What did Alex do yesterday?",
+                options: [
+                    "He went kayaking on the lake.",
+                    "He learned how to make a campfire.",
+                    "He wrote a letter to his parents."
+                ],
+                correct: 1,
+                explanation: "Đoạn văn viết: 'Yesterday, we learned how to make a campfire...' (Hôm qua, chúng tớ học cách đốt lửa trại). Các hoạt động khác là việc của ngày mai."
+            },
+            {
+                type: "listening",
+                typeLabel: "Kỹ năng Nghe - Tin nhắn thoại",
+                audioScript: "Hi Mom, it is Sarah. I am calling to tell you that my piano lesson finished early today. Can you come pick me up at the music school now instead of five o'clock? Thanks!",
+                question: "Why is Sarah calling her mom?",
+                options: [
+                    "To ask her mom to pick her up early.",
+                    "To tell her mom she will be late for piano class.",
+                    "To ask for money to buy a new piano."
+                ],
+                correct: 0,
+                explanation: "Sarah gọi điện để báo lớp học đàn kết thúc sớm (finished early) và nhờ mẹ đến đón bây giờ luôn thay vì 5 giờ (pick me up now instead of five o'clock)."
             }
         ];
 
         let currentQuestion = 0;
         let userAnswers = Array(questions.length).fill(null);
         let timerInterval;
-        let timeLeft = 300; // 5 phút làm bài thử nghiệm
+        let timeLeft = 2700; // 45 phút làm bài thử nghiệm
 
         const welcomeScreen = document.getElementById('welcome-screen');
         const quizScreen = document.getElementById('quiz-screen');
@@ -449,7 +489,7 @@
             quizScreen.classList.add('active');
             currentQuestion = 0;
             userAnswers = Array(questions.length).fill(null);
-            timeLeft = 300;
+            timeLeft = 2700;
             startTimer();
             loadQuestion();
         }
