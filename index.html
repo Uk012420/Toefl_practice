@@ -60,246 +60,85 @@
         }
 
         /* Screens */
-        .screen {
-            display: none;
-        }
-
-        .screen.active {
-            display: block;
-        }
+        .screen { display: none; }
+        .screen.active { display: block; }
 
         /* Welcome Screen */
-        .welcome-box {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .welcome-box img-placeholder {
-            font-size: 60px;
-            display: block;
-            margin-bottom: 15px;
-        }
+        .welcome-box { text-align: center; padding: 20px; }
+        .welcome-box .img-placeholder { font-size: 60px; display: block; margin-bottom: 15px; }
 
         .btn {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 30px;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(74, 144, 226, 0.2);
-            transition: all 0.2s ease;
-            margin-top: 15px;
+            background-color: var(--primary); color: white; border: none;
+            padding: 12px 28px; font-size: 16px; font-weight: bold;
+            border-radius: 30px; cursor: pointer; box-shadow: 0 4px 6px rgba(74, 144, 226, 0.2);
+            transition: all 0.2s ease; margin-top: 15px;
         }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(74, 144, 226, 0.3);
-            background-color: #357ABD;
-        }
+        .btn:hover { transform: translateY(-2px); background-color: #357ABD; }
 
         /* Quiz Header Stats */
         .quiz-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #ECF0F1;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 2px solid #ECF0F1; padding-bottom: 15px; margin-bottom: 20px;
         }
-
         .timer {
-            font-size: 16px;
-            font-weight: bold;
-            color: var(--accent);
-            background: #FEF5E7;
-            padding: 6px 15px;
-            border-radius: 20px;
+            font-size: 16px; font-weight: bold; color: var(--accent);
+            background: #FEF5E7; padding: 6px 15px; border-radius: 20px;
         }
-
         .progress-bar-container {
-            width: 100%;
-            height: 8px;
-            background-color: #ECF0F1;
-            border-radius: 4px;
-            margin-bottom: 25px;
-            overflow: hidden;
+            width: 100%; height: 8px; background-color: #ECF0F1;
+            border-radius: 4px; margin-bottom: 25px; overflow: hidden;
         }
-
-        .progress-bar {
-            height: 100%;
-            background-color: var(--primary);
-            width: 0%;
-            transition: width 0.3s ease;
-        }
+        .progress-bar { height: 100%; background-color: var(--primary); width: 0%; transition: width 0.3s ease; }
 
         /* Question Styles */
         .type-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 15px;
+            display: inline-block; padding: 4px 12px; border-radius: 12px;
+            font-size: 12px; font-weight: bold; color: white; margin-bottom: 15px;
         }
-
         .type-reading { background-color: #9B59B6; }
         .type-listening { background-color: #1ABC9C; }
 
-        .question-text {
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
+        .question-text { font-size: 18px; font-weight: 600; line-height: 1.5; margin-bottom: 20px; }
         .stimulus-box {
-            background-color: #F8F9FA;
-            border-left: 4px solid var(--primary);
-            padding: 15px;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            font-style: italic;
-            line-height: 1.6;
+            background-color: #F8F9FA; border-left: 4px solid var(--primary);
+            padding: 15px; border-radius: 4px; margin-bottom: 20px; font-style: italic; line-height: 1.6;
         }
 
         /* Audio Button */
-        .audio-control {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
+        .audio-control { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
         .btn-audio {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+            background-color: var(--secondary); color: white; border: none; width: 50px; height: 50px;
+            border-radius: 50%; cursor: pointer; font-size: 20px;
+            display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
         }
-
-        .btn-audio:hover {
-            background-color: #27AE60;
-        }
+        .btn-audio:hover { background-color: #27AE60; }
 
         /* Options */
-        .options-list {
-            list-style: none;
-        }
-
+        .options-list { list-style: none; }
         .option-item {
-            background: #F8F9FA;
-            border: 2px solid #E2E8F0;
-            border-radius: 10px;
-            padding: 14px 20px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
+            background: #F8F9FA; border: 2px solid #E2E8F0; border-radius: 10px;
+            padding: 14px 20px; margin-bottom: 12px; cursor: pointer; font-size: 16px;
+            transition: all 0.2s ease; display: flex; align-items: center;
         }
-
-        .option-item:hover {
-            border-color: var(--primary);
-            background-color: #EDF5FF;
-        }
-
-        .option-item.selected {
-            border-color: var(--primary);
-            background-color: #D6EAF8;
-            font-weight: bold;
-        }
-
-        .option-prefix {
-            font-weight: bold;
-            margin-right: 12px;
-            color: var(--primary);
-        }
+        .option-item:hover { border-color: var(--primary); background-color: #EDF5FF; }
+        .option-item.selected { border-color: var(--primary); background-color: #D6EAF8; font-weight: bold; }
+        .option-prefix { font-weight: bold; margin-right: 12px; color: var(--primary); }
 
         /* Navigation Buttons */
-        .nav-controls {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 25px;
-            padding-top: 15px;
-            border-top: 1px solid #ECF0F1;
-        }
-
-        .btn-nav {
-            background-color: #BDC3C7;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-        }
-
-        .btn-nav.active-next {
-            background-color: var(--primary);
-        }
+        .nav-controls { display: flex; justify-content: space-between; margin-top: 25px; padding-top: 15px; border-top: 1px solid #ECF0F1; }
+        .btn-nav { background-color: #BDC3C7; color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+        .btn-nav.active-next { background-color: var(--primary); }
 
         /* Results Screen */
-        .results-box {
-            text-align: center;
-            padding: 10px;
-        }
-
-        .badge-display {
-            font-size: 45px;
-            margin: 20px 0;
-            letter-spacing: 5px;
-        }
-
-        .score-text {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .review-section {
-            margin-top: 30px;
-            text-align: left;
-        }
-
-        .review-title {
-            font-size: 18px;
-            font-weight: bold;
-            border-bottom: 2px solid #BDC3C7;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
-        }
-
-        .review-item {
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #E2E8F0;
-        }
-
+        .results-box { text-align: center; padding: 10px; }
+        .badge-display { font-size: 45px; margin: 20px 0; letter-spacing: 5px; }
+        .score-text { font-size: 22px; font-weight: bold; margin-bottom: 10px; }
+        .review-section { margin-top: 30px; text-align: left; }
+        .review-title { font-size: 18px; font-weight: bold; border-bottom: 2px solid #BDC3C7; padding-bottom: 8px; margin-bottom: 15px; }
+        .review-item { padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid #E2E8F0; }
         .review-item.correct-style { border-left: 5px solid var(--secondary); }
         .review-item.wrong-style { border-left: 5px solid var(--wrong); }
-
-        .explanation {
-            margin-top: 8px;
-            font-size: 14px;
-            color: #7F8C8D;
-            background: #F8F9FA;
-            padding: 8px;
-            border-radius: 4px;
-        }
+        .explanation { margin-top: 8px; font-size: 14px; color: #7F8C8D; background: #F8F9FA; padding: 8px; border-radius: 4px; }
     </style>
 </head>
 <body>
@@ -307,25 +146,24 @@
     <div class="container">
         <header>
             <h1>TOEFL Primary Step 2</h1>
-            <p class="subtitle">Hệ thống ôn luyện 2 kỹ năng Nghe & Đọc thông minh</p>
+            <p class="subtitle">Hệ thống ôn luyện chuẩn định dạng ETS (60 Phút)</p>
         </header>
 
-        <!-- MÀN HÌNH BẮT ĐẦU -->
         <div id="welcome-screen" class="screen active welcome-box">
-            <span class="img-placeholder">🚀</span>
-            <h2>Chào mừng con đến với bài luyện tập thử nghiệm!</h2>
+            <span class="img-placeholder">⏱️</span>
+            <h2>Chào mừng con đến với bài thi tổng hợp!</h2>
             <p style="margin: 15px 0; color: #555; line-height: 1.6;">
-                Bài test thử nghiệm gồm 5 câu hỏi sát với cấu trúc đề thi thật của ETS:<br>
-                <strong>3 câu Đọc hiểu</strong> và <strong>2 câu Nghe hiểu</strong> (sử dụng giọng đọc máy AI).
+                Bài thi gồm 2 phần: <strong>Đọc hiểu</strong> và <strong>Nghe hiểu</strong>.<br>
+                Thời gian làm bài: <strong>60 phút</strong>.<br>
+                <em>(Lưu ý: Một số câu hỏi đầu tiên là câu mẫu không tính điểm. Hệ thống sẽ tự động chấm điểm các câu còn lại).</em>
             </p>
-            <button class="btn" onclick="startQuiz()">Bắt đầu làm bài</button>
+            <button class="btn" onclick="startQuiz()">Bắt đầu tính giờ & Làm bài</button>
         </div>
 
-        <!-- MÀN HÌNH LÀM BÀI -->
         <div id="quiz-screen" class="screen">
             <div class="quiz-header">
-                <span id="question-counter" style="font-weight: 600;">Câu hỏi 1/5</span>
-                <span id="time-display" class="timer">05:00</span>
+                <span id="question-counter" style="font-weight: 600;">Câu hỏi 1</span>
+                <span id="time-display" class="timer">60:00</span>
             </div>
             
             <div class="progress-bar-container">
@@ -333,8 +171,7 @@
             </div>
 
             <div id="question-container">
-                <!-- Nội dung câu hỏi sẽ được sinh tự động từ JS -->
-            </div>
+                </div>
 
             <div class="nav-controls">
                 <button id="btn-prev" class="btn-nav" onclick="prevQuestion()">Quay lại</button>
@@ -342,16 +179,15 @@
             </div>
         </div>
 
-        <!-- MÀN HÌNH KẾT QUẢ -->
         <div id="results-screen" class="screen results-box">
             <span style="font-size: 50px;">🎉</span>
             <h2>Chúc mừng con đã hoàn thành bài thi!</h2>
             
             <div id="badge-container" class="badge-display">🏅🏅🏅🏅🏅</div>
-            <div id="score-summary" class="score-text">Đạt được: 5 / 5 câu đúng</div>
+            <div id="score-summary" class="score-text">Đang tính điểm...</div>
             <p id="interpretation-text" style="color: #7F8C8D; margin-bottom: 20px;"></p>
 
-            <button class="btn" onclick="restartQuiz()">Làm lại bài</button>
+            <button class="btn" onclick="restartQuiz()">Làm lại bài mới</button>
 
             <div class="review-section">
                 <div class="review-title">Xem lại chi tiết bài làm:</div>
@@ -361,119 +197,217 @@
     </div>
 
     <script>
-        // Ngân hàng câu hỏi demo chuẩn TOEFL Primary Step 2
-        const questions = [
+        // ==========================================
+        // NGÂN HÀNG CÂU HỎI (24 Câu)
+        // ==========================================
+        const questionBank = [
+            // PHẦN 1: CÁC CÂU HỎI MẪU (Không tính điểm)
             {
-                type: "reading",
-                typeLabel: "Kỹ năng Đọc - Biển báo & Thông báo",
-                stimulus: "NOTICE TO ALL STUDENTS:<br>The school library will be closed this Friday for cleaning. Please return all borrowed books by Thursday afternoon.",
-                question: "What should students do?",
-                options: [
-                    "Bring their books back to the library on Thursday.",
-                    "Clean the library this Friday.",
-                    "Borrow new books on Friday morning."
-                ],
-                correct: 0,
-                explanation: "Thông báo yêu cầu học sinh phải trả lại sách đã mượn (return all borrowed books) muộn nhất vào chiều thứ Năm vì thứ Sáu thư viện đóng cửa để dọn dẹp."
+                type: "reading", isSample: true,
+                typeLabel: "Kỹ năng Đọc - CÂU MẪU 1",
+                stimulus: "Please wash your hands before eating.",
+                question: "What should you do?",
+                options: ["Wash hands", "Go to sleep", "Read a book"],
+                correct: 0, explanation: "Câu hỏi mẫu (Rửa tay trước khi ăn)."
             },
             {
-                type: "reading",
-                typeLabel: "Kỹ năng Đọc - Từ vựng ngữ cảnh",
-                stimulus: "This animal lives in the ocean. It is a mammal, not a fish. It is highly intelligent, loves to swim alongside boats, and breathes air through a blowhole on top of its head.",
-                question: "What animal is described in the text?",
-                options: [
-                    "A shark",
-                    "A dolphin",
-                    "A penguin"
-                ],
-                correct: 1,
-                explanation: "Đoạn văn mô tả một loài động vật có vú sống ở đại dương (mammal), rất thông minh (intelligent) và thở bằng lỗ trên đầu. Đó là đặc điểm của cá heo (dolphin)."
-            },
-            {
-                type: "reading",
-                typeLabel: "Kỹ năng Đọc - Đoạn văn ngắn",
-                stimulus: "Yesterday, Tim went to the Science Museum with his father. He was very excited to see the massive dinosaur fossils. His father bought him a toy T-Rex at the museum gift shop before they went home.",
-                question: "Why was Tim excited?",
-                options: [
-                    "Because he bought a new toy online.",
-                    "Because he saw huge dinosaur bones.",
-                    "Because he went to a toy store with his friend."
-                ],
-                correct: 1,
-                explanation: "Trong văn bản có chi tiết 'excited to see the massive dinosaur fossils' (hào hứng ngắm các hóa thạch khủng long khổng lồ). Từ 'fossils' tương đương với 'bones' (xương)."
-            },
-            {
-                type: "listening",
-                typeLabel: "Kỹ năng Nghe - Chỉ dẫn của giáo viên",
-                audioScript: "Listen to a teacher talking to her class. 'Class, please open your science textbooks to page forty-five and look at the diagram of the solar system.' What should the students do?",
+                type: "listening", isSample: true,
+                typeLabel: "Kỹ năng Nghe - CÂU MẪU 1",
+                audioScript: "Listen to the teacher. 'Please stand up.'",
                 question: "What should the students do?",
-                options: [
-                    "Draw a picture of the sun.",
-                    "Open their books to page 45.",
-                    "Clean their school desks."
-                ],
-                correct: 1,
-                explanation: "Lời giáo viên nói: 'open your science textbooks to page forty-five'. Vì vậy hành động đúng của học sinh là mở sách trang 45."
+                options: ["Sit down", "Stand up", "Open a book"],
+                correct: 1, explanation: "Câu hỏi mẫu (Đứng lên)."
             },
             {
-                type: "listening",
-                typeLabel: "Kỹ năng Nghe - Đoạn hội thoại",
-                audioScript: "Listen to a conversation between a boy and a girl. Boy: Are you going to the school art club today, Anna? Girl: No, it is canceled today because the teacher is sick. I am going to the library to read instead. Where is the girl going?",
-                question: "Where is the girl going?",
-                options: [
-                    "To the art club",
-                    "To the library",
-                    "To her classroom"
-                ],
-                correct: 1,
-                explanation: "Bạn nữ bảo câu lạc bộ mỹ thuật bị hủy (canceled) và bạn ấy sẽ đến thư viện để đọc sách ('going to the library to read instead')."
+                type: "listening", isSample: true,
+                typeLabel: "Kỹ năng Nghe - CÂU MẪU 2",
+                audioScript: "Boy: Can I borrow your pencil? Girl: Sure, here it is.",
+                question: "What does the boy want?",
+                options: ["A book", "A ruler", "A pencil"],
+                correct: 2, explanation: "Câu hỏi mẫu (Mượn bút chì)."
             },
-            // Thêm dấu phẩy ở câu số 5 phía trên trước khi dán đoạn này
             {
-                type: "reading",
+                type: "listening", isSample: true,
+                typeLabel: "Kỹ năng Nghe - CÂU MẪU 3",
+                audioScript: "Listen to the man. 'Welcome to the city zoo!'",
+                question: "Where are they?",
+                options: ["At a school", "At a zoo", "At a park"],
+                correct: 1, explanation: "Câu hỏi mẫu (Ở sở thú)."
+            },
+
+            // PHẦN 2: KỸ NĂNG ĐỌC HIỂU (READING)
+            {
+                type: "reading", isSample: false,
                 typeLabel: "Kỹ năng Đọc - Biển báo",
-                stimulus: "PLEASE KEEP OFF THE GRASS.<br>Use the walking paths only. Thank you! - City Park Manager",
-                question: "Where would you most likely see this sign?",
-                options: [
-                    "Inside a school library",
-                    "At a public park",
-                    "In a swimming pool"
-                ],
-                correct: 1,
-                explanation: "Biển báo yêu cầu không giẫm lên cỏ (Keep off the grass) và đi trên đường đi bộ (walking paths). Nó được ký bởi 'City Park Manager' nên chắc chắn nằm ở công viên (public park)."
+                stimulus: "LIBRARY RULES:<br>1. Be quiet.<br>2. No food or drinks allowed.<br>3. Return books on time.",
+                question: "What is NOT allowed in the library?",
+                options: ["Reading books", "Eating sandwiches", "Sitting down"],
+                correct: 1, explanation: "Luật số 2 ghi 'No food or drinks allowed' (Không được mang đồ ăn thức uống)."
             },
             {
-                type: "reading",
+                type: "reading", isSample: false,
+                typeLabel: "Kỹ năng Đọc - Thông báo",
+                stimulus: "Caution: Wet Floor.<br>Please walk carefully and do not run in this hallway.",
+                question: "Why should people walk carefully?",
+                options: ["Because it is dark", "Because the floor is wet", "Because there is a test"],
+                correct: 1, explanation: "Biển báo cảnh báo sàn nhà đang ướt (Wet Floor)."
+            },
+            {
+                type: "reading", isSample: false,
+                typeLabel: "Kỹ năng Đọc - Thư điện tử (Email)",
+                stimulus: "To: Sarah<br>From: Emily<br>Hi Sarah, my birthday party is this Saturday at 2 PM. We will have pizza and play games in my backyard. I hope you can come!<br>Emily",
+                question: "Where is the party?",
+                options: ["At a pizza restaurant", "At school", "In Emily's backyard"],
+                correct: 2, explanation: "Emily viết 'play games in my backyard' (chơi trò chơi ở sân sau nhà tớ)."
+            },
+            {
+                type: "reading", isSample: false,
+                typeLabel: "Kỹ năng Đọc - Khoa học tự nhiên",
+                stimulus: "Penguins are birds, but they cannot fly. Instead, they are excellent swimmers. They use their wings like flippers to move quickly through the ocean water to catch fish.",
+                question: "How do penguins use their wings?",
+                options: ["To fly in the sky", "To swim in the water", "To walk on ice"],
+                correct: 1, explanation: "Đoạn văn ghi: 'use their wings like flippers to move quickly through the ocean water' (dùng cánh như vây để bơi trong nước)."
+            },
+            {
+                type: "reading", isSample: false,
+                typeLabel: "Kỹ năng Đọc - Địa lý cơ bản",
+                stimulus: "The Sahara is the largest hot desert in the world. It is located in Africa. It is very dry and gets very little rain all year. Camels are one of the few animals that can live there easily.",
+                question: "What is true about the Sahara?",
+                options: ["It rains a lot there.", "It is located in Asia.", "It is a very dry place."],
+                correct: 2, explanation: "Đoạn văn mô tả sa mạc Sahara 'is very dry' (rất khô hạn)."
+            },
+            {
+                type: "reading", isSample: false,
+                typeLabel: "Kỹ năng Đọc - Lịch sử",
+                stimulus: "Long ago, before cars were invented, people traveled differently. They rode horses or walked to go to nearby towns. Trips that take one hour today could take several days in the past.",
+                question: "How did people travel before cars?",
+                options: ["By riding horses", "By flying in airplanes", "By taking trains"],
+                correct: 0, explanation: "Trước khi có ô tô, mọi người 'rode horses or walked' (cưỡi ngựa hoặc đi bộ)."
+            },
+            {
+                type: "reading", isSample: false,
+                typeLabel: "Kỹ năng Đọc - Động vật",
+                stimulus: "A chameleon is a special type of lizard. It can change the color of its skin to hide from other animals or to show how it feels. It also has a very long, sticky tongue to catch insects.",
+                question: "Why does a chameleon change its color?",
+                options: ["To catch insects faster", "To hide from other animals", "To keep its body warm"],
+                correct: 1, explanation: "Đoạn văn giải thích tắc kè hoa đổi màu da 'to hide from other animals' (để trốn các loài động vật khác)."
+            },
+            {
+                type: "reading", isSample: false,
+                typeLabel: "Kỹ năng Đọc - Thời khóa biểu",
+                stimulus: "SPORTS CAMP SCHEDULE:<br>9:00 AM - Tennis<br>10:30 AM - Swimming<br>12:00 PM - Lunch<br>1:00 PM - Basketball",
+                question: "What do children do right after lunch?",
+                options: ["Play tennis", "Go swimming", "Play basketball"],
+                correct: 2, explanation: "Sau giờ ăn trưa (12:00 PM) là đến 1:00 PM với môn Basketball (Bóng rổ)."
+            },
+            {
+                type: "reading", isSample: false,
                 typeLabel: "Kỹ năng Đọc - Thư từ (Letter)",
-                stimulus: "Dear Sam,<br>I am having a great time at summer camp! Yesterday, we learned how to make a campfire and cook marshmallows. Tomorrow, we are going kayaking on the lake. I miss you!<br>Best,<br>Alex",
-                question: "What did Alex do yesterday?",
-                options: [
-                    "He went kayaking on the lake.",
-                    "He learned how to make a campfire.",
-                    "He wrote a letter to his parents."
-                ],
-                correct: 1,
-                explanation: "Đoạn văn viết: 'Yesterday, we learned how to make a campfire...' (Hôm qua, chúng tớ học cách đốt lửa trại). Các hoạt động khác là việc của ngày mai."
+                stimulus: "Dear Mr. Smith,<br>Thank you for being a great science teacher this year. I loved learning about planets and space. Have a great summer holiday!<br>Best, Tom",
+                question: "What subject does Mr. Smith teach?",
+                options: ["Math", "Science", "History"],
+                correct: 1, explanation: "Tom viết thư cảm ơn vì ông ấy là 'a great science teacher' (một giáo viên khoa học tuyệt vời)."
             },
             {
-                type: "listening",
+                type: "reading", isSample: false,
+                typeLabel: "Kỹ năng Đọc - Suy luận",
+                stimulus: "Lily put on her thick coat, a wool hat, and a pair of gloves. She grabbed her sled and ran outside to meet her friends at the top of the hill.",
+                question: "What is the weather probably like?",
+                options: ["It is hot and sunny.", "It is cold and snowy.", "It is raining heavily."],
+                correct: 1, explanation: "Dựa vào việc mặc áo khoác dày, đội mũ len, đeo găng tay và mang xe trượt tuyết (sled), ta suy luận thời tiết đang lạnh và có tuyết (cold and snowy)."
+            },
+
+            // PHẦN 3: KỸ NĂNG NGHE HIỂU (LISTENING)
+            {
+                type: "listening", isSample: false,
+                typeLabel: "Kỹ năng Nghe - Chỉ dẫn của giáo viên",
+                audioScript: "Class, tomorrow we are going to the art room. Please remember to bring your paintbrushes and an old shirt so you do not get your uniforms dirty.",
+                question: "What should the students bring tomorrow?",
+                options: ["Math books", "Paintbrushes", "Clean uniforms"],
+                correct: 1, explanation: "Giáo viên dặn học sinh mang theo cọ vẽ (paintbrushes) và một chiếc áo cũ."
+            },
+            {
+                type: "listening", isSample: false,
+                typeLabel: "Kỹ năng Nghe - Đoạn hội thoại",
+                audioScript: "Boy: Hey Anna, are you playing soccer with us after school? Girl: I can't today. I have to go to the hospital to visit my grandmother. She is sick.",
+                question: "Why is the girl NOT playing soccer?",
+                options: ["She doesn't like soccer.", "She is sick.", "She is visiting her grandmother."],
+                correct: 2, explanation: "Bạn nữ bảo phải đến bệnh viện để thăm bà ('visit my grandmother')."
+            },
+            {
+                type: "listening", isSample: false,
                 typeLabel: "Kỹ năng Nghe - Tin nhắn thoại",
-                audioScript: "Hi Mom, it is Sarah. I am calling to tell you that my piano lesson finished early today. Can you come pick me up at the music school now instead of five o'clock? Thanks!",
-                question: "Why is Sarah calling her mom?",
-                options: [
-                    "To ask her mom to pick her up early.",
-                    "To tell her mom she will be late for piano class.",
-                    "To ask for money to buy a new piano."
-                ],
-                correct: 0,
-                explanation: "Sarah gọi điện để báo lớp học đàn kết thúc sớm (finished early) và nhờ mẹ đến đón bây giờ luôn thay vì 5 giờ (pick me up now instead of five o'clock)."
+                audioScript: "Hello, this is Dr. Brown's dental clinic. We are calling to remind Peter that he has an appointment to clean his teeth tomorrow at 4:30 PM. Thank you.",
+                question: "Who is this message from?",
+                options: ["A school teacher", "A dentist clinic", "Peter's mother"],
+                correct: 1, explanation: "Người gọi tự xưng là phòng khám nha khoa của bác sĩ Brown ('Dr. Brown's dental clinic')."
+            },
+            {
+                type: "listening", isSample: false,
+                typeLabel: "Kỹ năng Nghe - Thông báo công cộng",
+                audioScript: "Attention passengers. The train to London is now boarding at Platform 3. Please have your tickets ready to show to the conductor.",
+                question: "Where would you hear this announcement?",
+                options: ["At a train station", "At a library", "In a hospital"],
+                correct: 0, explanation: "Thông báo mời hành khách lên tàu (train) chuẩn bị vé, chắc chắn là ở ga tàu (train station)."
+            },
+            {
+                type: "listening", isSample: false,
+                typeLabel: "Kỹ năng Nghe - Hội thoại gia đình",
+                audioScript: "Boy: Mom, I can't find my green jacket. Mom: Did you check the closet in your bedroom? Boy: Let me look... Ah, yes! Here it is under my blue sweater.",
+                question: "Where did the boy find his jacket?",
+                options: ["Under the bed", "In the closet", "On the chair"],
+                correct: 1, explanation: "Cậu bé tìm thấy áo khoác trong tủ quần áo (closet) ở phòng ngủ."
+            },
+            {
+                type: "listening", isSample: false,
+                typeLabel: "Kỹ năng Nghe - Chỉ dẫn của giáo viên",
+                audioScript: "Listen carefully, everyone. For our field trip to the museum on Friday, you must all wear a red shirt. This will help us stay together in the crowd.",
+                question: "What color shirt must the students wear?",
+                options: ["Blue", "Yellow", "Red"],
+                correct: 2, explanation: "Giáo viên yêu cầu tất cả học sinh phải mặc áo sơ mi đỏ ('wear a red shirt') để khỏi lạc nhau."
+            },
+            {
+                type: "listening", isSample: false,
+                typeLabel: "Kỹ năng Nghe - Đoạn hội thoại",
+                audioScript: "Girl: What did you get for lunch, David? Boy: I wanted a chicken sandwich, but the cafeteria only had salad left. So I got the salad and an apple.",
+                question: "What did David get for lunch?",
+                options: ["A chicken sandwich", "Salad and an apple", "Pizza"],
+                correct: 1, explanation: "David muốn ăn bánh mì kẹp nhưng căng tin hết, nên cậu ấy đành mua salad và táo ('got the salad and an apple')."
+            },
+            {
+                type: "listening", isSample: false,
+                typeLabel: "Kỹ năng Nghe - Tin nhắn thoại",
+                audioScript: "Hi Jason, it is Mark. I think I left my math book at your house yesterday when we were doing our homework. Can you check your desk for me? Call me back!",
+                question: "What is Mark looking for?",
+                options: ["His phone", "His homework", "His math book"],
+                correct: 2, explanation: "Mark gọi để nhờ tìm cuốn sách toán ('math book') để quên hôm qua."
+            },
+            {
+                type: "listening", isSample: false,
+                typeLabel: "Kỹ năng Nghe - Thông báo trường học",
+                audioScript: "Attention students, the school library will close in 10 minutes. Please bring the books you want to borrow to the front desk now.",
+                question: "What is closing soon?",
+                options: ["The cafeteria", "The library", "The science lab"],
+                correct: 1, explanation: "Thông báo nói rằng thư viện trường ('school library') sẽ đóng cửa trong 10 phút nữa."
+            },
+            {
+                type: "listening", isSample: false,
+                typeLabel: "Kỹ năng Nghe - Chỉ dẫn của giáo viên",
+                audioScript: "Okay class, open your geography books to page 12. Look at the big map of South America on that page. Can anyone point to Brazil?",
+                question: "What are the students looking at?",
+                options: ["A picture of a tiger", "A map of South America", "A math problem"],
+                correct: 1, explanation: "Giáo viên bảo học sinh nhìn vào bản đồ Nam Mỹ ('map of South America') ở trang 12."
             }
         ];
 
+        // ==========================================
+        // CÁC BIẾN QUẢN LÝ TRẠNG THÁI BÀI THI
+        // ==========================================
+        let questions = []; 
         let currentQuestion = 0;
-        let userAnswers = Array(questions.length).fill(null);
+        let userAnswers = [];
         let timerInterval;
-        let timeLeft = 2700; // 45 phút làm bài thử nghiệm
+        let timeLeft = 3600; // 3600 giây = 60 phút
 
         const welcomeScreen = document.getElementById('welcome-screen');
         const quizScreen = document.getElementById('quiz-screen');
@@ -483,13 +417,44 @@
         const timeDisplay = document.getElementById('time-display');
         const progressBar = document.getElementById('progress-bar');
 
+        // Hàm trộn ngẫu nhiên mảng
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // Hàm Tự động sinh đề thi
+        function generateExam() {
+            const readingSamples = questionBank.filter(q => q.type === 'reading' && q.isSample === true);
+            const readingScored = questionBank.filter(q => q.type === 'reading' && q.isSample === false);
+            const listeningSamples = questionBank.filter(q => q.type === 'listening' && q.isSample === true);
+            const listeningScored = questionBank.filter(q => q.type === 'listening' && q.isSample === false);
+
+            if (readingScored.length >= 36 && listeningScored.length >= 36 && readingSamples.length >= 1 && listeningSamples.length >= 3) {
+                shuffleArray(readingScored);
+                shuffleArray(listeningScored);
+                const selectedReading = [readingSamples[0], ...readingScored.slice(0, 36)];
+                const selectedListening = [...listeningSamples.slice(0, 3), ...listeningScored.slice(0, 36)];
+                questions = [...selectedReading, ...selectedListening];
+            } else {
+                console.log("Ngân hàng chưa đủ 76 câu chuẩn, sử dụng toàn bộ câu hỏi hiện có.");
+                questions = [...readingSamples, ...readingScored, ...listeningSamples, ...listeningScored];
+            }
+        }
+
         function startQuiz() {
             welcomeScreen.classList.remove('active');
             resultsScreen.classList.remove('active');
             quizScreen.classList.add('active');
+            
+            generateExam(); 
+            
             currentQuestion = 0;
             userAnswers = Array(questions.length).fill(null);
-            timeLeft = 2700;
+            timeLeft = 3600; 
             startTimer();
             loadQuestion();
         }
@@ -514,9 +479,7 @@
             questionCounter.textContent = `Câu hỏi ${currentQuestion + 1}/${questions.length}`;
             progressBar.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
 
-            let html = `
-                <div class="type-badge ${q.type === 'reading' ? 'type-reading' : 'type-listening'}">${q.typeLabel}</div>
-            `;
+            let html = `<div class="type-badge ${q.type === 'reading' ? 'type-reading' : 'type-listening'}">${q.typeLabel}</div>`;
 
             if (q.type === 'reading') {
                 html += `<div class="stimulus-box">${q.stimulus}</div>`;
@@ -524,7 +487,7 @@
                 html += `
                     <div class="audio-control">
                         <button class="btn-audio" onclick="playAudio()">🔊</button>
-                        <span style="font-size: 14px; color: #27AE60; font-weight: 600;">Nhấp vào loa để nghe máy đọc (Bật âm lượng máy tính)</span>
+                        <span style="font-size: 14px; color: #27AE60; font-weight: 600;">Nhấp vào loa để nghe máy đọc</span>
                     </div>
                 `;
             }
@@ -533,7 +496,7 @@
             html += `<ul class="options-list">`;
 
             q.options.forEach((option, index) => {
-                const prefix = String.fromCharCode(65 + index); // A, B, C
+                const prefix = String.fromCharCode(65 + index); 
                 const isSelected = userAnswers[currentQuestion] === index ? 'selected' : '';
                 html += `
                     <li class="option-item ${isSelected}" onclick="selectOption(${index})">
@@ -545,10 +508,8 @@
             html += `</ul>`;
             questionContainer.innerHTML = html;
 
-            // Cập nhật trạng thái nút quay lại
             document.getElementById('btn-prev').style.visibility = currentQuestion === 0 ? 'hidden' : 'visible';
             
-            // Cập nhật chữ nút Tiếp theo -> Nộp bài ở câu cuối
             const nextBtn = document.getElementById('btn-next');
             if (currentQuestion === questions.length - 1) {
                 nextBtn.textContent = "Nộp bài";
@@ -561,7 +522,7 @@
 
         function selectOption(index) {
             userAnswers[currentQuestion] = index;
-            loadQuestion(); // Render lại để hiển thị trạng thái chọn
+            loadQuestion();
         }
 
         function nextQuestion() {
@@ -569,7 +530,6 @@
                 currentQuestion++;
                 loadQuestion();
             } else {
-                // Xác nhận nộp bài
                 if(confirm("Con có chắc chắn muốn nộp bài chấm điểm không?")) {
                     clearInterval(timerInterval);
                     endQuiz();
@@ -584,17 +544,14 @@
             }
         }
 
-        // Hàm phát âm chuẩn dùng Web Speech API tích hợp sẵn trên trình duyệt Chrome/Edge
-        function playAudio () {
+        function playAudio() {
             let text = questions[currentQuestion].audioScript;
-            // Dừng các giọng nói đang phát dở (nếu có)
             window.speechSynthesis.cancel();
             
             const utterance = new SpeechSynthesisUtterance(text);
             utterance.lang = 'en-US';
-            utterance.rate = 0.85; // Tốc độ nói chậm rãi, phù hợp với học sinh tiểu học Step 2
+            utterance.rate = 0.85;
 
-            // Tìm giọng đọc chuẩn tiếng Anh Mỹ tự nhiên nếu có sẵn trên máy
             const voices = window.speechSynthesis.getVoices();
             const googleVoice = voices.find(v => v.name.includes('Google US English'));
             if(googleVoice) utterance.voice = googleVoice;
@@ -602,50 +559,57 @@
             window.speechSynthesis.speak(utterance);
         }
 
-        function escapeRegExp(string) {
-            return string.replace(/'/g, "\'");
-        }
-
         function endQuiz() {
             quizScreen.classList.remove('active');
             resultsScreen.classList.add('active');
 
-            let correctCount = 0;
+            let correctReading = 0;
+            let correctListening = 0;
+            let maxScore = 0;
+
             questions.forEach((q, idx) => {
-                if (userAnswers[idx] === q.correct) correctCount++;
+                if (!q.isSample) {
+                    maxScore++;
+                    if (userAnswers[idx] === q.correct) {
+                        if (q.type === 'reading') correctReading++;
+                        if (q.type === 'listening') correctListening++;
+                    }
+                }
             });
 
-            // Hiển thị huy hiệu (Badges) tương thích TOEFL Primary Step 2
-            let badges = "";
+            let totalCorrect = correctReading + correctListening;
+            let percentage = (totalCorrect / maxScore) * 100;
+            let badges = "🏅🏅";
             let interpretation = "";
-            if (correctCount === 5) {
+            
+            if (percentage >= 90) {
                 badges = "🏅🏅🏅🏅🏅";
-                interpretation = "Xuất sắc! Con đạt cấp độ năng lực tối đa (Mức cao nhất của Step 2). Sẵn sàng đi thi thực tế.";
-            } else if (correctCount === 4) {
+                interpretation = `Xuất sắc! Con đúng ${totalCorrect}/${maxScore} câu tính điểm. Đạt mức 5 Huy hiệu tối đa!`;
+            } else if (percentage >= 70) {
                 badges = "🏅🏅🏅🏅";
-                interpretation = "Rất tốt! Con có nền tảng vững vàng, chỉ cần chú ý sửa các lỗi sai nhỏ để đạt điểm tuyệt đối.";
-            } else if (correctCount === 3) {
+                interpretation = `Rất tốt! Con đúng ${totalCorrect}/${maxScore} câu tính điểm. Đạt mức 4 Huy hiệu.`;
+            } else if (percentage >= 50) {
                 badges = "🏅🏅🏅";
-                interpretation = "Khá tốt! Con đáp ứng được năng lực cơ bản của Step 2, cần bổ sung thêm từ vựng học thuật.";
+                interpretation = `Khá! Con đúng ${totalCorrect}/${maxScore} câu tính điểm. Đạt mức 3 Huy hiệu.`;
             } else {
                 badges = "🏅🏅";
-                interpretation = "Con cần cố gắng nhiều hơn. Hãy rèn luyện thêm vốn từ vựng nền tảng và luyện nghe hằng ngày nhé.";
+                interpretation = `Con đúng ${totalCorrect}/${maxScore} câu tính điểm. Cần cố gắng ôn luyện thêm từ vựng nhé.`;
             }
 
             document.getElementById('badge-container').textContent = badges;
-            document.getElementById('score-summary').textContent = `Đạt được: ${correctCount} / ${questions.length} câu đúng`;
+            document.getElementById('score-summary').textContent = `Kết quả: Đọc ${correctReading} | Nghe ${correctListening} (Tổng: ${totalCorrect}/${maxScore} câu tính điểm)`;
             document.getElementById('interpretation-text').textContent = interpretation;
 
-            // Render phần xem lại chi tiết bài làm
             let reviewHtml = "";
             questions.forEach((q, idx) => {
                 const isCorrect = userAnswers[idx] === q.correct;
                 const userChoicePrefix = userAnswers[idx] !== null ? String.fromCharCode(65 + userAnswers[idx]) : "Không trả lời";
                 const correctPrefix = String.fromCharCode(65 + q.correct);
+                const sampleTag = q.isSample ? `<span style="color:#F39C12; font-weight:bold;">[Câu Mẫu - Không tính điểm]</span>` : "";
 
                 reviewHtml += `
                     <div class="review-item ${isCorrect ? 'correct-style' : 'wrong-style'}">
-                        <strong>Câu ${idx + 1}: ${q.question}</strong><br>
+                        <strong>Câu ${idx + 1}: ${q.question}</strong> ${sampleTag}<br>
                         <span style="font-size:14px; color:#555;">${q.type === 'reading' ? 'Đoạn văn đọc: ' + q.stimulus : 'Kịch bản nghe: ' + q.audioScript}</span><br>
                         <div style="margin-top: 5px; font-size:15px;">
                             Đáp án của con: <span style="font-weight:bold; color:${isCorrect ? 'var(--secondary)' : 'var(--wrong)'}">${userChoicePrefix}</span> | 
@@ -658,15 +622,8 @@
             document.getElementById('review-container').innerHTML = reviewHtml;
         }
 
-        function restartQuiz() {
-            startQuiz();
-        }
-
-        // Kích hoạt nạp giọng nói cho một số trình duyệt tải chậm
-        window.speechSynthesis.onvoiceschanged = function() {
-            // Chỉ chạy ngầm để nạp danh sách giọng nói chuẩn
-            window.speechSynthesis.getVoices();
-        };
+        function restartQuiz() { startQuiz(); }
+        window.speechSynthesis.onvoiceschanged = function() { window.speechSynthesis.getVoices(); };
     </script>
 </body>
 </html>
