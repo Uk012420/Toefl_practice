@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOEFL Primary Step 2 - Luyện Tập Thông Minh</title>
+    <style>
+        :root {
+            --primary: #4A90E2;
+            --secondary: #2ECC71;
+            --accent: #F39C12;
+            --background: #F4F7F6;
+            --text-color: #2C3E50;
+            --card-bg: #FFFFFF;
+            --wrong: #E74C3C;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: #7F8C8D;
+            font-size: 14px;
+        }
+
+        /* Screens */
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        /* Welcome Screen */
+        .welcome-box {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .welcome-box img-placeholder {
+            font-size: 60px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(74, 144, 226, 0.2);
+            transition: all 0.2s ease;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(74, 144, 226, 0.3);
+            background-color: #357ABD;
+        }
+
+        /* Quiz Header Stats */
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ECF0F1;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .timer {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--accent);
+            background: #FEF5E7;
+            padding: 6px 15px;
+            border-radius: 20px;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background-color: #ECF0F1;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: var(--primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Question Styles */
+        .type-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .type-reading { background-color: #9B59B6; }
+        .type-listening { background-color: #1ABC9C; }
+
+        .question-text {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .stimulus-box {
+            background-color: #F8F9FA;
+            border-left: 4px solid var(--primary);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* Audio Button */
+        .audio-control {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-audio {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(46, 204, 113, 0.2);
+        }
+
+        .btn-audio:hover {
+            background-color: #27AE60;
+        }
+
+        /* Options */
+        .options-list {
+            list-style: none;
+        }
+
+        .option-item {
+            background: #F8F9FA;
+            border: 2px solid #E2E8F0;
+            border-radius: 10px;
+            padding: 14px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .option-item:hover {
+            border-color: var(--primary);
+            background-color: #EDF5FF;
+        }
+
+        .option-item.selected {
+            border-color: var(--primary);
+            background-color: #D6EAF8;
+            font-weight: bold;
+        }
+
+        .option-prefix {
+            font-weight: bold;
+            margin-right: 12px;
+            color: var(--primary);
+        }
+
+        /* Navigation Buttons */
+        .nav-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px solid #ECF0F1;
+        }
+
+        .btn-nav {
+            background-color: #BDC3C7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .btn-nav.active-next {
+            background-color: var(--primary);
+        }
+
+        /* Results Screen */
+        .results-box {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .badge-display {
+            font-size: 45px;
+            margin: 20px 0;
+            letter-spacing: 5px;
+        }
+
+        .score-text {
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .review-section {
+            margin-top: 30px;
+            text-align: left;
+        }
+
+        .review-title {
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #BDC3C7;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        .review-item {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .review-item.correct-style { border-left: 5px solid var(--secondary); }
+        .review-item.wrong-style { border-left: 5px solid var(--wrong); }
+
+        .explanation {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #7F8C8D;
+            background: #F8F9FA;
+            padding: 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>TOEFL Primary Step 2</h1>
+            <p class="subtitle">Hệ thống ôn luyện 2 kỹ năng Nghe & Đọc thông minh</p>
+        </header>
+
+        <!-- MÀN HÌNH BẮT ĐẦU -->
+        <div id="welcome-screen" class="screen active welcome-box">
+            <span class="img-placeholder">🚀</span>
+            <h2>Chào mừng con đến với bài luyện tập thử nghiệm!</h2>
+            <p style="margin: 15px 0; color: #555; line-height: 1.6;">
+                Bài test thử nghiệm gồm 5 câu hỏi sát với cấu trúc đề thi thật của ETS:<br>
+                <strong>3 câu Đọc hiểu</strong> và <strong>2 câu Nghe hiểu</strong> (sử dụng giọng đọc máy AI).
+            </p>
+            <button class="btn" onclick="startQuiz()">Bắt đầu làm bài</button>
+        </div>
+
+        <!-- MÀN HÌNH LÀM BÀI -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <span id="question-counter" style="font-weight: 600;">Câu hỏi 1/5</span>
+                <span id="time-display" class="timer">05:00</span>
+            </div>
+            
+            <div class="progress-bar-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+
+            <div id="question-container">
+                <!-- Nội dung câu hỏi sẽ được sinh tự động từ JS -->
+            </div>
+
+            <div class="nav-controls">
+                <button id="btn-prev" class="btn-nav" onclick="prevQuestion()">Quay lại</button>
+                <button id="btn-next" class="btn-nav active-next" onclick="nextQuestion()">Tiếp theo</button>
+            </div>
+        </div>
+
+        <!-- MÀN HÌNH KẾT QUẢ -->
+        <div id="results-screen" class="screen results-box">
+            <span style="font-size: 50px;">🎉</span>
+            <h2>Chúc mừng con đã hoàn thành bài thi!</h2>
+            
+            <div id="badge-container" class="badge-display">🏅🏅🏅🏅🏅</div>
+            <div id="score-summary" class="score-text">Đạt được: 5 / 5 câu đúng</div>
+            <p id="interpretation-text" style="color: #7F8C8D; margin-bottom: 20px;"></p>
+
+            <button class="btn" onclick="restartQuiz()">Làm lại bài</button>
+
+            <div class="review-section">
+                <div class="review-title">Xem lại chi tiết bài làm:</div>
+                <div id="review-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Ngân hàng câu hỏi demo chuẩn TOEFL Primary Step 2
+        const questions = [
+            {
+                type: "reading",
+                typeLabel: "Kỹ năng Đọc - Biển báo & Thông báo",
+                stimulus: "NOTICE TO ALL STUDENTS:<br>The school library will be closed this Friday for cleaning. Please return all borrowed books by Thursday afternoon.",
+                question: "What should students do?",
+                options: [
+                    "Bring their books back to the library on Thursday.",
+                    "Clean the library this Friday.",
+                    "Borrow new books on Friday morning."
+                ],
+                correct: 0,
+                explanation: "Thông báo yêu cầu học sinh phải trả lại sách đã mượn (return all borrowed books) muộn nhất vào chiều thứ Năm vì thứ Sáu thư viện đóng cửa để dọn dẹp."
+            },
+            {
+                type: "reading",
+                typeLabel: "Kỹ năng Đọc - Từ vựng ngữ cảnh",
+                stimulus: "This animal lives in the ocean. It is a mammal, not a fish. It is highly intelligent, loves to swim alongside boats, and breathes air through a blowhole on top of its head.",
+                question: "What animal is described in the text?",
+                options: [
+                    "A shark",
+                    "A dolphin",
+                    "A penguin"
+                ],
+                correct: 1,
+                explanation: "Đoạn văn mô tả một loài động vật có vú sống ở đại dương (mammal), rất thông minh (intelligent) và thở bằng lỗ trên đầu. Đó là đặc điểm của cá heo (dolphin)."
+            },
+            {
+                type: "reading",
+                typeLabel: "Kỹ năng Đọc - Đoạn văn ngắn",
+                stimulus: "Yesterday, Tim went to the Science Museum with his father. He was very excited to see the massive dinosaur fossils. His father bought him a toy T-Rex at the museum gift shop before they went home.",
+                question: "Why was Tim excited?",
+                options: [
+                    "Because he bought a new toy online.",
+                    "Because he saw huge dinosaur bones.",
+                    "Because he went to a toy store with his friend."
+                ],
+                correct: 1,
+                explanation: "Trong văn bản có chi tiết 'excited to see the massive dinosaur fossils' (hào hứng ngắm các hóa thạch khủng long khổng lồ). Từ 'fossils' tương đương với 'bones' (xương)."
+            },
+            {
+                type: "listening",
+                typeLabel: "Kỹ năng Nghe - Chỉ dẫn của giáo viên",
+                audioScript: "Listen to a teacher talking to her class. 'Class, please open your science textbooks to page forty-five and look at the diagram of the solar system.' What should the students do?",
+                question: "What should the students do?",
+                options: [
+                    "Draw a picture of the sun.",
+                    "Open their books to page 45.",
+                    "Clean their school desks."
+                ],
+                correct: 1,
+                explanation: "Lời giáo viên nói: 'open your science textbooks to page forty-five'. Vì vậy hành động đúng của học sinh là mở sách trang 45."
+            },
+            {
+                type: "listening",
+                typeLabel: "Kỹ năng Nghe - Đoạn hội thoại",
+                audioScript: "Listen to a conversation between a boy and a girl. Boy: Are you going to the school art club today, Anna? Girl: No, it is canceled today because the teacher is sick. I am going to the library to read instead. Where is the girl going?",
+                question: "Where is the girl going?",
+                options: [
+                    "To the art club",
+                    "To the library",
+                    "To her classroom"
+                ],
+                correct: 1,
+                explanation: "Bạn nữ bảo câu lạc bộ mỹ thuật bị hủy (canceled) và bạn ấy sẽ đến thư viện để đọc sách ('going to the library to read instead')."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = Array(questions.length).fill(null);
+        let timerInterval;
+        let timeLeft = 300; // 5 phút làm bài thử nghiệm
+
+        const welcomeScreen = document.getElementById('welcome-screen');
+        const quizScreen = document.getElementById('quiz-screen');
+        const resultsScreen = document.getElementById('results-screen');
+        const questionContainer = document.getElementById('question-container');
+        const questionCounter = document.getElementById('question-counter');
+        const timeDisplay = document.getElementById('time-display');
+        const progressBar = document.getElementById('progress-bar');
+
+        function startQuiz() {
+            welcomeScreen.classList.remove('active');
+            resultsScreen.classList.remove('active');
+            quizScreen.classList.add('active');
+            currentQuestion = 0;
+            userAnswers = Array(questions.length).fill(null);
+            timeLeft = 300;
+            startTimer();
+            loadQuestion();
+        }
+
+        function startTimer() {
+            clearInterval(timerInterval);
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                let mins = Math.floor(timeLeft / 60);
+                let secs = timeLeft % 60;
+                timeDisplay.textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    endQuiz();
+                }
+            }, 1000);
+        }
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            questionCounter.textContent = `Câu hỏi ${currentQuestion + 1}/${questions.length}`;
+            progressBar.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
+
+            let html = `
+                <div class="type-badge ${q.type === 'reading' ? 'type-reading' : 'type-listening'}">${q.typeLabel}</div>
+            `;
+
+            if (q.type === 'reading') {
+                html += `<div class="stimulus-box">${q.stimulus}</div>`;
+            } else if (q.type === 'listening') {
+                html += `
+                    <div class="audio-control">
+                        <button class="btn-audio" onclick="playAudio('${escapeRegExp(q.audioScript)}')">🔊</button>
+                        <span style="font-size: 14px; color: #27AE60; font-weight: 600;">Nhấp vào loa để nghe máy đọc (Bật âm lượng máy tính)</span>
+                    </div>
+                `;
+            }
+
+            html += `<div class="question-text">${q.question}</div>`;
+            html += `<ul class="options-list">`;
+
+            q.options.forEach((option, index) => {
+                const prefix = String.fromCharCode(65 + index); // A, B, C
+                const isSelected = userAnswers[currentQuestion] === index ? 'selected' : '';
+                html += `
+                    <li class="option-item ${isSelected}" onclick="selectOption(${index})">
+                        <span class="option-prefix">${prefix}.</span> ${option}
+                    </li>
+                `;
+            });
+
+            html += `</ul>`;
+            questionContainer.innerHTML = html;
+
+            // Cập nhật trạng thái nút quay lại
+            document.getElementById('btn-prev').style.visibility = currentQuestion === 0 ? 'hidden' : 'visible';
+            
+            // Cập nhật chữ nút Tiếp theo -> Nộp bài ở câu cuối
+            const nextBtn = document.getElementById('btn-next');
+            if (currentQuestion === questions.length - 1) {
+                nextBtn.textContent = "Nộp bài";
+                nextBtn.style.backgroundColor = "var(--secondary)";
+            } else {
+                nextBtn.textContent = "Tiếp theo";
+                nextBtn.style.backgroundColor = "var(--primary)";
+            }
+        }
+
+        function selectOption(index) {
+            userAnswers[currentQuestion] = index;
+            loadQuestion(); // Render lại để hiển thị trạng thái chọn
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                // Xác nhận nộp bài
+                if(confirm("Con có chắc chắn muốn nộp bài chấm điểm không?")) {
+                    clearInterval(timerInterval);
+                    endQuiz();
+                }
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        // Hàm phát âm chuẩn dùng Web Speech API tích hợp sẵn trên trình duyệt Chrome/Edge
+        function playAudio(text) {
+            // Dừng các giọng nói đang phát dở (nếu có)
+            window.speechSynthesis.cancel();
+            
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.85; // Tốc độ nói chậm rãi, phù hợp với học sinh tiểu học Step 2
+
+            // Tìm giọng đọc chuẩn tiếng Anh Mỹ tự nhiên nếu có sẵn trên máy
+            const voices = window.speechSynthesis.getVoices();
+            const googleVoice = voices.find(v => v.name.includes('Google US English'));
+            if(googleVoice) utterance.voice = googleVoice;
+
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/'/g, "\'");
+        }
+
+        function endQuiz() {
+            quizScreen.classList.remove('active');
+            resultsScreen.classList.add('active');
+
+            let correctCount = 0;
+            questions.forEach((q, idx) => {
+                if (userAnswers[idx] === q.correct) correctCount++;
+            });
+
+            // Hiển thị huy hiệu (Badges) tương thích TOEFL Primary Step 2
+            let badges = "";
+            let interpretation = "";
+            if (correctCount === 5) {
+                badges = "🏅🏅🏅🏅🏅";
+                interpretation = "Xuất sắc! Con đạt cấp độ năng lực tối đa (Mức cao nhất của Step 2). Sẵn sàng đi thi thực tế.";
+            } else if (correctCount === 4) {
+                badges = "🏅🏅🏅🏅";
+                interpretation = "Rất tốt! Con có nền tảng vững vàng, chỉ cần chú ý sửa các lỗi sai nhỏ để đạt điểm tuyệt đối.";
+            } else if (correctCount === 3) {
+                badges = "🏅🏅🏅";
+                interpretation = "Khá tốt! Con đáp ứng được năng lực cơ bản của Step 2, cần bổ sung thêm từ vựng học thuật.";
+            } else {
+                badges = "🏅🏅";
+                interpretation = "Con cần cố gắng nhiều hơn. Hãy rèn luyện thêm vốn từ vựng nền tảng và luyện nghe hằng ngày nhé.";
+            }
+
+            document.getElementById('badge-container').textContent = badges;
+            document.getElementById('score-summary').textContent = `Đạt được: ${correctCount} / ${questions.length} câu đúng`;
+            document.getElementById('interpretation-text').textContent = interpretation;
+
+            // Render phần xem lại chi tiết bài làm
+            let reviewHtml = "";
+            questions.forEach((q, idx) => {
+                const isCorrect = userAnswers[idx] === q.correct;
+                const userChoicePrefix = userAnswers[idx] !== null ? String.fromCharCode(65 + userAnswers[idx]) : "Không trả lời";
+                const correctPrefix = String.fromCharCode(65 + q.correct);
+
+                reviewHtml += `
+                    <div class="review-item ${isCorrect ? 'correct-style' : 'wrong-style'}">
+                        <strong>Câu ${idx + 1}: ${q.question}</strong><br>
+                        <span style="font-size:14px; color:#555;">${q.type === 'reading' ? 'Đoạn văn đọc: ' + q.stimulus : 'Kịch bản nghe: ' + q.audioScript}</span><br>
+                        <div style="margin-top: 5px; font-size:15px;">
+                            Đáp án của con: <span style="font-weight:bold; color:${isCorrect ? 'var(--secondary)' : 'var(--wrong)'}">${userChoicePrefix}</span> | 
+                            Đáp án đúng: <span style="font-weight:bold; color:var(--secondary)">${correctPrefix}. ${q.options[q.correct]}</span>
+                        </div>
+                        <div class="explanation">💡 <strong>Giải thích:</strong> ${q.explanation}</div>
+                    </div>
+                `;
+            });
+            document.getElementById('review-container').innerHTML = reviewHtml;
+        }
+
+        function restartQuiz() {
+            startQuiz();
+        }
+
+        // Kích hoạt nạp giọng nói cho một số trình duyệt tải chậm
+        window.speechSynthesis.onvoiceschanged = function() {
+            // Chỉ chạy ngầm để nạp danh sách giọng nói chuẩn
+            window.speechSynthesis.getVoices();
+        };
+    </script>
+</body>
+</html>
